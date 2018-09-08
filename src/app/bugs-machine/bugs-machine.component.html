@@ -1,0 +1,24 @@
+<input placeholder="your bug" [(ngModel)]="bug">
+
+<button (click)="addBug(bug)" [disabled]="!bug" *ngIf="!editing">
+  Add bug
+</button>
+
+<button (click)="updateBug(bug)" *ngIf="editing">
+  Update
+</button>
+<button (click)="cancelEdit()" *ngIf="editing">
+  Cancel
+</button>
+
+
+<ul>
+
+  <li *ngFor="let bug of bugs$ | async">
+    {{bug.problem}}
+    <span [class.done]="bug.done"></span>
+    <button (click)="editBug(bug)">Edit</button>
+    <button (click)="toggleDone(bug)">Toggle Done</button>
+    <button (click)="deleteBug(bug.id)">X</button>
+  </li>
+</ul>
