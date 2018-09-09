@@ -20,6 +20,8 @@ import { BugModule } from './bug.module';
 //   todoReducer: todoReducer,
 // };
 
+import { BugsModule } from './bugs/bugs.module';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -38,7 +40,8 @@ import { BugModule } from './bug.module';
     // StoreModule.forFeature('todo', todoReducer),
     EffectsModule.forRoot([]),
     TodoModule,
-    BugModule
+    // BugModule,
+    BugsModule
 
   ],
   providers: [],

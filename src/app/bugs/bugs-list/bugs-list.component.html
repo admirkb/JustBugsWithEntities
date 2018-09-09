@@ -1,0 +1,6 @@
+
+<div *ngFor="let bug of bugs$ | async; let i = index">
+  <app-bugs-item 
+     [bug]="bug" [index]="i">
+    </app-bugs-item>
+</div>

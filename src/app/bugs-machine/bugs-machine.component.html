@@ -15,7 +15,7 @@
 <ul>
 
   <li *ngFor="let bug of bugs$ | async">
-    {{bug.problem}}
+      {{bug.problem}} /     {{bug.response}}
     <span [class.done]="bug.done"></span>
     <button (click)="editBug(bug)">Edit</button>
     <button (click)="toggleDone(bug)">Toggle Done</button>
